@@ -18,7 +18,7 @@ void ToDoList::addTask(const std::string& taskName) {
     notify("Task added: " + taskName);
 }
 
-void ToDoList::completeTask(int index) {
+void ToDoList::completeTask(size_t index) {
     if (index >= 0 && index < tasks.size()) {
         tasks[index].completed = true;
         notify("Task completed: " + tasks[index].name);

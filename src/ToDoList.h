@@ -18,9 +18,10 @@ public:
     void addObserver(Observer* obs);
     void notify(const std::string& msg);
     void addTask(const std::string& taskName);
-    void completeTask(int index);
+    void completeTask(size_t index);
     void setSortStrategy(SortStrategy* newSorter);
     void showTasks();
+    const std::vector<Task>& getTasks() const { return tasks; }
 };
 
 #endif
