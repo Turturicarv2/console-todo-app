@@ -1,4 +1,5 @@
-#include "common.h"
+#include "ToDoList.h"
+#include <iostream>
 
 ToDoList::ToDoList() : sorter(new SortByName()) {}
 
@@ -6,13 +7,13 @@ void ToDoList::addObserver(Observer* obs) {
     observers.push_back(obs);
 }
 
-void ToDoList::notify(const string& msg) {
+void ToDoList::notify(const std::string& msg) {
     for (auto obs : observers) {
         obs->onTaskUpdated(msg);
     }
 }
 
-void ToDoList::addTask(const string& taskName) {
+void ToDoList::addTask(const std::string& taskName) {
     tasks.push_back(Task(taskName));
     notify("Task added: " + taskName);
 }
@@ -31,8 +32,8 @@ void ToDoList::setSortStrategy(SortStrategy* newSorter) {
 
 void ToDoList::showTasks() {
     sorter->sort(tasks);
-    cout << "\n--- To-Do List ---\n";
+    std::cout << "\n--- To-Do List ---\n";
     for (size_t i = 0; i < tasks.size(); i++) {
-        cout << i + 1 << ". [" << (tasks[i].completed ? "x" : " ") << "] " << tasks[i].name << endl;
+        std::cout << i + 1 << ". [" << (tasks[i].completed ? "x" : " ") << "] " << tasks[i].name << std::endl;
     }
 }

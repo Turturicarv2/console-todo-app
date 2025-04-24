@@ -3,14 +3,12 @@
 
 #include <string>
 
-using namespace std;
-
 class Task {
     public:
-        string name;
+        std::string name;
         bool completed;
     
-        Task(string n) : name(n), completed(false) {}
+        Task(std::string n) : name(n), completed(false) {}
 };
 
 #endif

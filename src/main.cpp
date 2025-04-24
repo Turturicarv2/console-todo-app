@@ -1,4 +1,7 @@
-#include "common.h"
+#include "ToDoList.h"
+#include "ConsoleLogger.h"
+#include <string>
+#include <iostream>
 
 // --------- Main Function ---------
 int main() {
@@ -7,23 +10,23 @@ int main() {
     todo.addObserver(&logger);
 
     int choice;
-    string name;
+    std::string name;
     int index;
 
     while (true) {
-        cout << "\n1. Add Task\n2. Complete Task\n3. Show Tasks\n4. Sort by Name\n5. Sort by Status\n0. Exit\n> ";
-        cin >> choice;
+        std::cout << "\n1. Add Task\n2. Complete Task\n3. Show Tasks\n4. Sort by Name\n5. Sort by Status\n0. Exit\n> ";
+        std::cin >> choice;
 
         switch (choice) {
             case 1:
-                cout << "Enter task name: ";
-                cin.ignore();
-                getline(cin, name);
+                std::cout << "Enter task name: ";
+                std::cin.ignore();
+                std::getline(std::cin, name);
                 todo.addTask(name);
                 break;
             case 2:
-                cout << "Enter task number to complete: ";
-                cin >> index;
+                std::cout << "Enter task number to complete: ";
+                std::cin >> index;
                 todo.completeTask(index - 1);
                 break;
             case 3:
@@ -38,7 +41,7 @@ int main() {
             case 0:
                 return 0;
             default:
-                cout << "Invalid option.\n";
+                std::cout << "Invalid option.\n";
         }
     }
 

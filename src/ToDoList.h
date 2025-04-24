@@ -1,11 +1,16 @@
 #ifndef TODOLIST_H
 #define TODOLIST_H
 
-#include "common.h"
+#include <vector>
+#include "Task.h"
+#include "SortStrategy.h"
+#include "Observer.h"
+#include "SortByStatus.h"
+#include "SortByName.h"
 
 class ToDoList {
-    vector<Task> tasks;
-    vector<Observer*> observers;
+    std::vector<Task> tasks;
+    std::vector<Observer*> observers;
     SortStrategy* sorter;
 
 public:

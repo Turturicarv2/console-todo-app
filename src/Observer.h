@@ -3,11 +3,9 @@
 
 #include <string>
 
-using namespace std;
-
 class Observer {
     public:
-        virtual void onTaskUpdated(const string& msg) = 0;
+        virtual void onTaskUpdated(const std::string& msg) = 0;
 };
 
 #endif

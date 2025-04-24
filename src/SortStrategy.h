@@ -1,12 +1,12 @@
 #ifndef SORTSTRATEGY_H
 #define SORTSTRATEGY_H
 
-#include "common.h"
+#include <vector>
 #include "Task.h"
 
 class SortStrategy {
     public:
-        virtual void sort(vector<Task>& tasks) = 0;
+        virtual void sort(std::vector<Task>& tasks) = 0;
 };
 
 #endif

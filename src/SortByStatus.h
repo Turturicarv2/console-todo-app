@@ -1,11 +1,14 @@
 #ifndef SORTBYSTATUS_H
 #define SORTBYSTATUS_H
 
-#include "common.h"
+#include "SortStrategy.h"
+#include "Task.h"
+#include <vector>
+#include <algorithm>
 
 class SortByStatus : public SortStrategy {
     public:
-        void sort(vector<Task>& tasks) override {
+        void sort(std::vector<Task>& tasks) override {
             std::sort(tasks.begin(), tasks.end(), [](Task& a, Task& b) {
                 return a.completed < b.completed;
             });
